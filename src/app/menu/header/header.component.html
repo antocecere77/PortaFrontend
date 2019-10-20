@@ -1,0 +1,41 @@
+<nav class="mnb navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <i class="ic fa fa-bars"></i>
+        </button>
+        <div style="padding: 15px 0;">
+           <a id="msbo" style="cursor: pointer;"><i class="ic fa fa-bars" (click)="toggleSideNav()"></i></a>
+        </div>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">En</a></li>         
+          <li [ngClass]="openNotificationMenu ? 'dropdown open': 'dropdown'" (click)="toggleUserMenu('notification')">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-bell-o"></i><span class="badge badge-error">2</span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">PBT-XXXX terminated with error</a></li>
+                <li><a href="#">PBT-XXXX terminated successfully</a></li>             
+              </ul>            
+          </li>
+
+          <li><a href="#"><i class="fa fa-question-circle-o fa-lg"></i></a></li>
+
+          <li [ngClass]="openUserMenu ? 'dropdown open': 'dropdown'">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" (click)="toggleUserMenu('user')">Antonio Cecere <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Settings</a></li>
+              <li><a href="#">Upgrade</a></li>
+              <li><a href="#">Help</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <input type="text" class="form-control" placeholder="Search...">
+        </form>
+      </div>
+    </div>
+  </nav>
